@@ -29,7 +29,7 @@ const Funnel = () => {
         left: '10%',
         top: 60,
         bottom: 20,
-        width: '80%',
+        width: '55%',
         min: 0,
         max: funnelData[0].count,
         minSize: '0%',
@@ -38,12 +38,12 @@ const Funnel = () => {
         gap: 2,
         label: {
           show: true,
-          position: 'inside',
+          position: 'right',
           formatter: '{b}: {c}',
-          textStyle: { color: '#ffffff', fontWeight: 'bold' }
+          textStyle: { fontWeight: 'bold' }
         },
         labelLine: {
-          show: false
+          show: true
         },
         itemStyle: {
           borderColor: 'transparent',

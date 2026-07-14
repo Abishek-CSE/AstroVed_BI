@@ -91,7 +91,7 @@ const AdminControl = ({ initialTab = 'users' }) => {
   // 3. STATE - KPI MANAGEMENT
   // ----------------------------------------------------
   const [kpis, setKpis] = useState([
-    { id: 1, name: 'Daily Revenue', category: 'Executive', formula: 'SUM(daily_sales)', order: 1, color: '#6366f1', target: '৳10,00,000', warning: '৳8,00,000', critical: '৳5,00,000' },
+    { id: 1, name: 'Daily Revenue', category: 'Executive', formula: 'SUM(daily_sales)', order: 1, color: '#6366f1', target: '₹10,00,000', warning: '₹8,00,000', critical: '₹5,00,000' },
     { id: 2, name: 'Conversion Rate', category: 'Sales', formula: 'completed_orders / total_visitors * 100', order: 2, color: '#06b6d4', target: '3.5%', warning: '3.0%', critical: '2.0%' },
     { id: 3, name: 'Google Ads ROAS', category: 'Marketing', formula: 'google_ads_revenue / google_ads_spend', order: 3, color: '#10b981', target: '4.5x', warning: '4.0x', critical: '3.0x' }
   ]);
@@ -110,7 +110,7 @@ const AdminControl = ({ initialTab = 'users' }) => {
   // 4. STATE - TARGET MANAGEMENT
   // ----------------------------------------------------
   const [targetMetrics, setTargetMetrics] = useState([
-    { id: 1, name: 'Revenue Target', type: 'Monthly', value: '৳5,00,00,000', dept: 'All', country: 'All', product: 'All' },
+    { id: 1, name: 'Revenue Target', type: 'Monthly', value: '₹5,00,00,000', dept: 'All', country: 'All', product: 'All' },
     { id: 2, name: 'Sales Conversion', type: 'Quarterly', value: '4.2%', dept: 'Sales', country: 'India', product: 'Puja Services' },
     { id: 3, name: 'Marketing ROI', type: 'Annual', value: '5.0x', dept: 'Marketing', country: 'USA', product: 'All' }
   ]);
@@ -189,7 +189,7 @@ const AdminControl = ({ initialTab = 'users' }) => {
     companyName: 'AstroVed Business Solutions',
     logoUrl: 'https://cdn.astroved.com/images/images-av/AstroVed-Logo.svg',
     themeMode: 'light',
-    currency: '৳ (BDT)',
+    currency: '₹ (INR)',
     timeZone: 'GMT+5:30 (IST)',
     fiscalYear: 'April - March',
     dateFormat: 'DD-MM-YYYY',

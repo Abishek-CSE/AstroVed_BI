@@ -12,12 +12,14 @@ import Operations from './modules/Operations/Operations';
 import AIInsights from './modules/AIInsights/AIInsights';
 import ReportsBuilder from './modules/Reports/ReportsBuilder';
 import AdminControl from './modules/Admin/AdminControl';
+import Login from './components/Login';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Toaster } from 'react-hot-toast';
 import './App.css';
 
 
 function MainAppContent() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentModule, setCurrentModule] = useState('executive');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,6 +112,10 @@ function MainAppContent() {
   };
 
 
+  if (!isLoggedIn) {
+    return <Login onLogin={() => setIsLoggedIn(true)} />;
+  }
+
   return (
     <div className="flex bg-cosmic-bg h-screen text-cosmic-text font-sans relative overflow-hidden">
 
@@ -141,6 +147,13 @@ function MainAppContent() {
           title={getModuleTitle()}
           onSearch={(val) => console.log('Searching for:', val)}
           onToggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
+          onNavigate={(targetTab) => {
+            // Map the tab target to module
+            if (targetTab === 'system-settings') {
+              setCurrentModule('system-settings');
+            }
+          }}
+          onLogout={() => setIsLoggedIn(false)}
         />
 
         <main className="p-4 md:p-6 overflow-y-auto flex-1">

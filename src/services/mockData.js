@@ -15,8 +15,8 @@ const getSeededRandom = (seed) => {
 };
 
 export const formatTaka = (val) => {
-  if (val === undefined || val === null) return '৳ 0';
-  return '৳ ' + Math.round(val).toLocaleString('en-IN');
+  if (val === undefined || val === null) return '₹ 0';
+  return '₹ ' + Math.round(val).toLocaleString('en-IN');
 };
 
 export const formatCurrency = (val, currency = 'USD') => {
