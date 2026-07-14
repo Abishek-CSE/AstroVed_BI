@@ -13,6 +13,7 @@ import AIInsights from './modules/AIInsights/AIInsights';
 import ReportsBuilder from './modules/Reports/ReportsBuilder';
 import AdminControl from './modules/Admin/AdminControl';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { Toaster } from 'react-hot-toast';
 import './App.css';
 
 
@@ -56,11 +57,19 @@ function MainAppContent() {
         return <ReportsBuilder />;
       case 'user-management':
         return <AdminControl initialTab="users" />;
+      case 'roles-permissions':
+        return <AdminControl initialTab="roles" />;
       case 'kpi-management':
+        return <AdminControl initialTab="kpis" />;
+      case 'target-management':
         return <AdminControl initialTab="targets" />;
+      case 'report-scheduler':
+        return <AdminControl initialTab="scheduler" />;
+      case 'ai-settings':
+        return <AdminControl initialTab="ai" />;
       case 'system-settings':
       case 'integrations':
-        return <AdminControl initialTab="ai" />;
+        return <AdminControl initialTab="system" />;
       default:
         return <Executive />;
     }
@@ -82,8 +91,11 @@ function MainAppContent() {
       notifications: 'System Notifications',
       'data-management': 'Data Management Audit',
       'user-management': 'User Management Settings',
-      'kpi-management': 'KPI Target & Milestone Config',
-      'system-settings': 'BI System Settings',
+      'roles-permissions': 'Roles & Permissions Authorization',
+      'kpi-management': 'KPI Configurator Library',
+      'target-management': 'Target Settings Matrix',
+      'ai-settings': 'AI Cognitive Settings & Engine',
+      'system-settings': 'BI System Configuration',
       integrations: 'Third Party Integrations',
       'daily-report': 'Daily BI Report Scheduler',
       'weekly-report': 'Weekly BI Report Scheduler',
@@ -144,6 +156,26 @@ function App() {
   return (
     <ThemeProvider>
       <DateFilterProvider>
+        <Toaster 
+          position="top-right" 
+          toastOptions={{
+            style: {
+              background: 'var(--cosmic-card)',
+              color: 'var(--cosmic-text)',
+              border: '1px solid var(--cosmic-border)',
+              fontSize: '12px',
+              fontWeight: '600',
+              borderRadius: '12px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)',
+            },
+            success: {
+              iconTheme: {
+                primary: '#6868f9',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
         <MainAppContent />
       </DateFilterProvider>
     </ThemeProvider>

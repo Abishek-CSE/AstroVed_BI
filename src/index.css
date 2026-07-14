@@ -12,6 +12,10 @@
   --color-cosmic-accent: var(--cosmic-accent);
   --color-cosmic-success: var(--cosmic-success);
   --color-cosmic-danger: var(--cosmic-danger);
+  
+  /* Custom primary color requested by user */
+  --color-indigo-500: #6868f9;
+  --color-indigo-600: #6868f9;
 }
 
 :root {
@@ -22,7 +26,7 @@
   --cosmic-border: #2d3748;
   --cosmic-text: #f8fafc;
   --cosmic-muted: #94a3b8;
-  --cosmic-primary: #6366f1;
+  --cosmic-primary: #6868f9;
   --cosmic-secondary: #06b6d4;
   --cosmic-accent: #f59e0b;
   --cosmic-success: #10b981;
@@ -37,7 +41,7 @@
   --cosmic-border: #cbd5e1;
   --cosmic-text: #0f172a;
   --cosmic-muted: #64748b;
-  --cosmic-primary: #4f46e5;
+  --cosmic-primary: #6868f9;
   --cosmic-secondary: #0891b2;
 }
 
@@ -97,5 +101,52 @@ input, textarea, [contenteditable="true"] {
   -moz-user-select: text;
   -ms-user-select: text;
   cursor: text;
+}
+
+/* Premium Toast Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-toast-progress {
+  animation: toastProgress 3s linear forwards;
+}
+
+@keyframes dynamicIsland {
+  0% {
+    transform: translate(-50%, -80px) scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50%, 6px) scale(1.03);
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-dynamic-island {
+  animation: dynamicIsland 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 

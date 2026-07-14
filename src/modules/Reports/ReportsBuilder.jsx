@@ -108,7 +108,7 @@ const ReportsBuilder = () => {
                     onClick={() => setExportFormat(f)}
                     className={`py-2 px-1 rounded-xl text-xs font-bold uppercase border transition-colors ${
                       exportFormat === f
-                        ? 'bg-cyan-600 border-cyan-500 text-white'
+                        ? 'bg-indigo-600 border-indigo-500 text-white'
                         : 'bg-cosmic-bg border-cosmic-border text-cosmic-muted hover:text-cosmic-text'
                     }`}
                   >
@@ -122,7 +122,7 @@ const ReportsBuilder = () => {
             <button
               onClick={handleExport}
               disabled={isExporting}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-sm font-bold flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50"
+              className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 shadow-md shadow-indigo-600/10"
             >
               {isExporting ? (
                 <>
